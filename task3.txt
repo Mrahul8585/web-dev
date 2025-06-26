@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather Forecast App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      background-color: #3498db;
+      color: white;
+      padding: 20px;
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px 5px;
+      font-size: 16px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+    .forecast-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+    .weather-card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin: 10px;
+      padding: 15px;
+      width: 180px;
+    }
+    .weather-card img {
+      width: 50px;
+      height: 50px;
+    }
+    @media (max-width: 600px) {
+      .weather-card {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Weather Forecast</h1>
+    <p>Enter your city or use your location to see the 5-day forecast</p>
+  </header>
+
+  <div>
+    <input type="text" id="cityInput" placeholder="Enter city name" />
+    <button onclick="fetchWeatherByCity()">Search</button>
+    <button onclick="fetchWeatherByLocation()">Use My Location</button>
+  </div>
+
+  <div id="forecast" class="forecast-container"></div>
+
+  <script>
+    const apiKey = "YOUR_API_KEY_HERE"; // Replace with your OpenWeatherMap API key
+
+    function fetchWeatherByCity() {
+      const city = document.getElementById("cityInput").value.trim();
+      if (!city) {
+        alert("Please enter a city name.");
+        return;
+      }
+      fetchForecast(q=${city});
+    }
+
+    function fetchWeatherByLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          position => {
+            const { latitude, longitude } = position.coords;
+            fetchForecast(lat=${latitude}&lon=${longitude});
+          },
+          () => {
+            alert("Failed to get your location.");
+          }
+        );
+      } else {
+        alert("Geolocation is not supported by your browser.");
+      }
+    }
+
+    async function fetchForecast(query) {
+      const url = https://api.openweathermap.org/data/2.5/forecast?${query}&appid=${apiKey}&units=metric;
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        if (data.cod !== "200") {
+          alert("Error: " + data.message);
+          return;
+        }
+
+        displayForecast(data);
+      } catch (error) {
+        alert("Failed to fetch weather data.");
+      }
+    }
+
+    function displayForecast(data) {
+      const forecastContainer = document.getElementById("forecast");
+      forecastContainer.innerHTML = ""; // Clear previous results
+
+      const dailyData = data.list.filter((item, index) => index % 8 === 0); // 5 days
+
+      dailyData.forEach(item => {
+        const date = new Date(item.dt_txt).toLocaleDateString();
+        const temp = item.main.temp;
+        const desc = item.weather[0].description;
+        const icon = item.weather[0].icon;
+
+        const card = document.createElement("div");
+        card.className = "weather-card";
+
+        card.innerHTML = `
+          <h3>${date}</h3>
+          <img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="${desc}">
+          <p><strong>${temp}°C</strong></p>
+          <p>${desc}</p>
+        `;
+
+        forecastContainer.appendChild(card);
+      });
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Product Landing Page</title>
+
+  <style>
+
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+
+    header, footer { background: #333; color: #fff; text-align: center; padding: 1em 0; }
+
+    nav a { color: #fff; margin: 0 15px; text-decoration: none; }
+
+    .hero {
+
+      background: #f4f4f4;
+
+      text-align: center;
+
+      padding: 50px 20px;
+
+    }
+
+    .columns {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      justify-content: space-around;
+
+      padding: 40px 20px;
+
+      background: #fff;
+
+    }
+
+    .column {
+
+      flex: 1 1 300px;
+
+      max-width: 300px;
+
+      margin: 20px;
+
+      text-align: center;
+
+    }
+
+    .column img {
+
+      width: 100%;
+
+      height: auto;
+
+      border-radius: 8px;
+
+    }
+
+    .cta-button {
+
+      padding: 10px 20px;
+
+      font-size: 18px;
+
+      background: #007BFF;
+
+      color: white;
+
+      border: none;
+
+      cursor: pointer;
+
+    }
+
+    footer { font-size: 14px; }
+
+  </style>
+
+</head>
+
+<body>
+
+
+
+  <header>
+
+    <h1>MyProduct</h1>
+
+    <nav>
+
+      <a href="#features">Features</a>
+
+      <a href="#pricing">Pricing</a>
+
+      <a href="#contact">Contact</a>
+
+    </nav>
+
+  </header>
+
+
+
+  <section class="hero">
+
+    <h2>Your solution to everything</h2>
+
+    <p>Discover the future of simplicity with our all-in-one product.</p>
+
+    <button class="cta-button">Buy Now</button>
+
+  </section>
+
+
+
+  <section id="features" class="columns">
+
+    <div class="column">
+
+      <img src="https://via.placeholder.com/300x200" alt="Feature 1">
+
+      <h3>Fast Setup</h3>
+
+      <p>Get started quickly with minimal setup required.</p>
+
+    </div>
+
+    <div class="column">
+
+      <img src="https://via.placeholder.com/300x200" alt="Feature 2">
+
+      <h3>Secure</h3>
+
+      <p>Top-level security ensures your data is always protected.</p>
+
+    </div>
+
+    <div class="column">
+
+      <img src="https://via.placeholder.com/300x200" alt="Feature 3">
+
+      <h3>Scalable</h3>
+
+      <p>Our product grows with your needs and business.</p>
+
+    </div>
+
+  </section>
+
+
+
+  <footer>
+
+    &copy; 2025 MyProduct Inc. | Contact us: info@myproduct.com
+
+  </footer>
+
+
+
+</body>
+
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product Landing Page</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header, footer { background: #333; color: #fff; text-align: center; padding: 1em 0; }
+    nav a { color: #fff; margin: 0 15px; text-decoration: none; }
+    .hero {
+      background: #f4f4f4;
+      text-align: center;
+      padding: 50px 20px;
+    }
+    .columns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 40px 20px;
+      background: #fff;
+    }
+    .column {
+      flex: 1 1 300px;
+      max-width: 300px;
+      margin: 20px;
+      text-align: center;
+    }
+    .column img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .cta-button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    footer { font-size: 14px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>MyProduct</h1>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Your solution to everything</h2>
+    <p>Discover the future of simplicity with our all-in-one product.</p>
+    <button class="cta-button">Buy Now</button>
+  </section>
+
+  <section id="features" class="columns">
+    <div class="column">
+      <img src="https://via.placeholder.com/300x200" alt="Feature 1">
+      <h3>Fast Setup</h3>
+      <p>Get started quickly with minimal setup required.</p>
+    </div>
+    <div class="column">
+      <img src="https://via.placeholder.com/300x200" alt="Feature 2">
+      <h3>Secure</h3>
+      <p>Top-level security ensures your data is always protected.</p>
+    </div>
+    <div class="column">
+      <img src="https://via.placeholder.com/300x200" alt="Feature 3">
+      <h3>Scalable</h3>
+      <p>Our product grows with your needs and business.</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 MyProduct Inc. | Contact us: info@myproduct.com
+  </footer>
+
+</body>
+</html>
